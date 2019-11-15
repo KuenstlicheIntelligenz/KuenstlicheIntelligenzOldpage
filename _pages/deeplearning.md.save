@@ -1,0 +1,117 @@
+---
+layout: inner
+title: About
+permalink: /about/
+---
+
+It doesn't matter what comes, fresh goes better in life, with Mentos fresh and full of Life! Nothing gets to you, stayin' fresh, stayin' cool, with Mentos fresh and full of life! Fresh goes better! Mentos freshness! Fresh goes better with Mentos, fresh and full of life! Mentos! The Freshmaker!
+
+We got a right to pick a little fight, Bonanza! If anyone fights anyone of us, he's gotta fight with me! We're not a one to saddle up and run, Bonanza! Anyone of us who starts a little fuss knows he can count on me! One for four, four for one, this we guarantee. We got a right to pick a little fight, Bonanza! If anyone fights anyone of us he's gotta fight with me!
+
+Creating Posts
+
+Creating posts are equally easy as creating pages. The only difference is you need to associate a date or timestamp with them and they go in their own folder:
+
+
+_posts/
+
+Here's how you should create your file:
+
+
+YYYY-MM-DD-my-title-is-called-this.md
+
+This is automatically parsed by Jekyll and creates default title and date variables. You can override this in your front-matter though. Here's an example of a post's front-matter:
+
+
+---
+layout: inner
+title: 'My First Post on Jekyll'
+date: 2015-08-31 13:26:34
+categories: blog development
+tags: cats dogs code
+custom_var: 'meow meow meow'
+---
+
+It doesn't matter what comes, fresh goes better in life, with Mentos fresh and full of Life! Nothing gets to you, stayin' fresh, stayin' cool, with Mentos fresh and full of life! Fresh goes better! Mentos freshness! Fresh goes better with Mentos, fresh and full of life! Mentos! The Freshmaker!
+
+We got a right to pick a little fight, Bonanza! If anyone fights anyone of us, he's gotta fight with me! We're not a one to saddle up and run, Bonanza! Anyone of us who starts a little fuss knows he can count on me! One for four, four for one, this we guarantee. We got a right to pick a little fight, Bonanza! If anyone fights anyone of us he's gotta fight with me!
+
+Check out all the post variables and how to retreive them in your templates here.
+Looping through Posts
+
+There's essentially two ways to loop through posts:
+
+    Without Pagination
+    With Pagination
+
+Here' how to do it without pagination:
+
+
+{% for post in site.posts %}
+
+    <h2>post.title</h2>
+    <div class="content">
+        {{ post.content }}
+    </div>
+
+{% endfor %}
+
+And here's how to do it with pagination:
+
+
+{% for post in paginator.posts %}
+    {% include tile.html %}
+{% endfor %}
+
+Collections
+
+This article won't cover collections, but imagine collections as a custom content type. Not everything is a post or a page, so that's where these come in handy.
+
+In WordPress, this would be the equivalent of a "custom post type". Or, in ExpressionEngine or other CMS's, a custom "channel".
+
+You can read about setting them up here.
+Data files
+
+jekyll-data
+
+"Data files" are collections of pure, raw, and static data. Think of these as variables or groups of variables. You can have data files be in .yml, .yaml, .json, or even a .csv.
+
+I personally prefer to put everything custom in here and not in my _config.yml file. I separate custom variables into data files because they're "watched" by Jekyll during development. Variables in _config.yml are set when the site is built - and that's it.
+
+Some good example use cases:
+
+    Site navigations
+    Global variables that are site-wide
+    Misc. footer stuff
+    Google Analytics tracking code
+    Etc...
+
+You can have as many data files as you want. Just put all of them in a folder called:
+
+
+_data/
+
+To retrieve the "data" in your layouts, it's as easy as:
+
+
+{{ site.data.filename1.some_variable }}
+{{ site.data.filename2.another_variable }}
+
+Check them out here for more information.
+Conclusion
+
+Jekyll is pretty cool and easy to use - even if you don't like or know Ruby. Static CMS's definitely have their obvious benefits for users over database driven CMS's.
+
+Make sure you checkout the demo and its code! It covers everything and more.
+
+Here's some additional resources on Jekyll to wrap-up the tutorial:
+
+    Deployment
+    GitHub Pages
+    Plugins
+    Working with Drafts
+    OctoPress
+
+Like this article? Follow @whatnicktweets on Twitter
+Read next...
+
